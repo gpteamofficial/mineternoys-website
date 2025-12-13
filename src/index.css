@@ -1,0 +1,201 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Mineternoys Design System
+   Enterprise SaaS - Calm, Confident, Professional
+   Dark mode by default
+   All colors in HSL
+*/
+
+@layer base {
+  :root {
+    /* Light mode (secondary) */
+    --background: 220 20% 97%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 222 47% 11%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 215 25% 92%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 215 25% 92%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 32 95% 44%;
+    --accent-foreground: 0 0% 100%;
+
+    --accent-secondary: 180 35% 45%;
+    --accent-secondary-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 222 47% 11%;
+
+    --radius: 0.5rem;
+
+    /* Sidebar */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 222 47% 11%;
+    --sidebar-primary: 222 47% 11%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 215 25% 92%;
+    --sidebar-accent-foreground: 222 47% 11%;
+    --sidebar-border: 214 32% 91%;
+    --sidebar-ring: 222 47% 11%;
+  }
+
+  .dark {
+    /* Dark mode (default) - Deep Midnight Navy */
+    --background: 225 50% 4%;
+    --foreground: 210 40% 96%;
+
+    --card: 225 45% 6%;
+    --card-foreground: 210 40% 96%;
+
+    --popover: 225 45% 6%;
+    --popover-foreground: 210 40% 96%;
+
+    --primary: 210 40% 96%;
+    --primary-foreground: 225 50% 6%;
+
+    --secondary: 220 30% 10%;
+    --secondary-foreground: 210 40% 96%;
+
+    --muted: 220 30% 10%;
+    --muted-foreground: 215 20% 50%;
+
+    --accent: 32 100% 50%;
+    --accent-foreground: 225 50% 4%;
+
+    --accent-secondary: 180 45% 48%;
+    --accent-secondary-foreground: 225 50% 4%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 25% 12%;
+    --input: 220 25% 12%;
+    --ring: 210 40% 80%;
+
+    /* Sidebar */
+    --sidebar-background: 225 45% 5%;
+    --sidebar-foreground: 210 40% 96%;
+    --sidebar-primary: 210 40% 96%;
+    --sidebar-primary-foreground: 225 50% 6%;
+    --sidebar-accent: 220 30% 10%;
+    --sidebar-accent-foreground: 210 40% 96%;
+    --sidebar-border: 220 25% 12%;
+    --sidebar-ring: 210 40% 80%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* RTL Support for Arabic */
+  [dir="rtl"] {
+    font-family: "Inter", "Noto Sans Arabic", system-ui, sans-serif;
+  }
+}
+
+@layer utilities {
+  /* Subtle animations */
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  .animate-slide-in-right {
+    animation: slideInRight 0.5s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  /* Glass effect for header */
+  .glass {
+    @apply bg-background/90 backdrop-blur-lg;
+  }
+
+  /* Subtle hover transitions */
+  .hover-lift {
+    @apply transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-lg hover:shadow-background/50;
+  }
+
+  /* Container for consistent max-width */
+  .container-custom {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12;
+  }
+
+  /* Section spacing */
+  .section-padding {
+    @apply py-20 md:py-28 lg:py-32;
+  }
+
+  /* Premium card styling */
+  .card-premium {
+    @apply bg-card border border-border rounded-xl transition-all duration-300;
+  }
+
+  .card-premium:hover {
+    @apply border-border/80 shadow-xl shadow-background/50;
+  }
+
+  /* Text gradient */
+  .text-gradient {
+    @apply bg-gradient-to-r from-accent to-accent-secondary bg-clip-text text-transparent;
+  }
+}
