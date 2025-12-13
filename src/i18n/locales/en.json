@@ -1,0 +1,148 @@
+{
+  "nav": {
+    "products": "Products",
+    "pricing": "Pricing",
+    "about": "About",
+    "contact": "Contact",
+    "joinDiscord": "Join Discord"
+  },
+  "hero": {
+    "title": "Automation Tools for Community Servers",
+    "subtitle": "Mineternoys provides reliable automation, monitoring, and configuration solutions designed for community-based game servers.",
+    "viewProducts": "View Products",
+    "seePricing": "See Pricing"
+  },
+  "products": {
+    "title": "Our Products",
+    "subtitle": "Purpose-built tools for server automation and management",
+    "minemeganbot": {
+      "name": "MineMeganBot",
+      "tagline": "Smart Automation & Monitoring",
+      "description": "Intelligent automation with activity presence, monitoring, and reconnect logic for seamless server management.",
+      "features": {
+        "presence": "Smart Activity Presence",
+        "monitoring": "Real-time Monitoring",
+        "reconnect": "Automatic Reconnect Logic",
+        "discord": "Discord Integration"
+      }
+    },
+    "minemeganconfig": {
+      "name": "MineMegan Config",
+      "tagline": "Server Setup & Configuration",
+      "description": "Streamlined server configuration, setup optimization, and organization tools for efficient management.",
+      "features": {
+        "setup": "Server Setup",
+        "config": "Configuration Management",
+        "optimization": "Performance Optimization",
+        "organization": "Resource Organization"
+      }
+    },
+    "learnMore": "Learn More",
+    "viewPricing": "View Pricing"
+  },
+  "whyUs": {
+    "title": "Why Mineternoys",
+    "subtitle": "Built with a product-first mindset for community servers",
+    "points": {
+      "automation": {
+        "title": "Automation-Focused",
+        "description": "Purpose-built tools that handle repetitive tasks so you can focus on your community."
+      },
+      "reliable": {
+        "title": "Reliable & Scalable",
+        "description": "Simple architecture designed to grow with your server's needs."
+      },
+      "community": {
+        "title": "Community-Driven",
+        "description": "Developed with direct feedback from server administrators and communities."
+      },
+      "simple": {
+        "title": "Simple by Design",
+        "description": "Clear separation between products, easy to understand, easy to use."
+      }
+    }
+  },
+  "pricing": {
+    "title": "Pricing",
+    "subtitle": "Transparent pricing with no hidden fees",
+    "free": {
+      "name": "Free",
+      "price": "$0",
+      "period": "forever",
+      "description": "Get started with basic features",
+      "features": [
+        "Basic automation features",
+        "Community support",
+        "Limited monitoring",
+        "Monthly renewal required"
+      ]
+    },
+    "starter": {
+      "name": "Starter",
+      "price": "$9",
+      "period": "/month",
+      "description": "For growing communities",
+      "features": [
+        "All Free features",
+        "Priority support",
+        "Full monitoring suite",
+        "Discord integration",
+        "No renewal required"
+      ]
+    },
+    "pro": {
+      "name": "Pro",
+      "price": "$29",
+      "period": "/month",
+      "description": "For serious server operators",
+      "features": [
+        "All Starter features",
+        "Advanced automation",
+        "Custom configurations",
+        "API access",
+        "Dedicated support"
+      ]
+    },
+    "cta": "Get Started"
+  },
+  "about": {
+    "title": "About Mineternoys",
+    "subtitle": "A technology company focused on automation",
+    "story": {
+      "title": "Our Story",
+      "content": "Mineternoys was founded with a simple mission: to provide reliable automation tools for community-based game servers. We believe that server administrators should focus on their communities, not on repetitive technical tasks."
+    },
+    "mission": {
+      "title": "Our Mission",
+      "content": "To build simple, scalable, and reliable automation solutions that empower community server operators worldwide."
+    },
+    "approach": {
+      "title": "Our Approach",
+      "content": "We take a product-first approach, developing focused tools that do one thing exceptionally well. Our products are designed to work together seamlessly while maintaining clear separation and purpose."
+    }
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "subtitle": "Join our community or reach out for support",
+    "discord": {
+      "title": "Join Our Discord",
+      "description": "Connect with our community, get support, and stay updated on the latest developments.",
+      "cta": "Join Discord Server"
+    }
+  },
+  "footer": {
+    "description": "Automation and monitoring tools for community-based game servers.",
+    "products": "Products",
+    "company": "Company",
+    "legal": "Legal",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "copyright": "© {{year}} Mineternoys. All rights reserved.",
+    "poweredBy": "Powered by Mineternoys"
+  },
+  "common": {
+    "getStarted": "Get Started",
+    "learnMore": "Learn More",
+    "viewAll": "View All"
+  }
+}
