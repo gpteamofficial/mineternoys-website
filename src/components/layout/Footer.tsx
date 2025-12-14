@@ -1,129 +1,129 @@
+import { forwardRef } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
-export function Footer() {
+const Footer = forwardRef<HTMLElement>((_, ref) => {
   const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
 
+  const productLinks = [
+    { name: "MineMeganBot", href: "/products/minemeganbot" },
+    { name: "MineMegan Config", href: "/products/minemeganconfig" },
+    { name: t("nav.pricing"), href: "/pricing" },
+  ];
+
+  const companyLinks = [
+    { name: t("nav.about"), href: "/about" },
+    { name: t("nav.contact"), href: "/contact" },
+    { name: "FAQ", href: "/faq" },
+    { name: "Discord", href: "https://discord.gg/mineternoys", external: true },
+  ];
+
+  const legalLinks = [
+    { name: t("footer.privacy"), href: "/privacy" },
+    { name: t("footer.terms"), href: "/terms" },
+  ];
+
   return (
-    <footer className="border-t border-border/50 bg-secondary/10">
+    <footer ref={ref} className="border-t border-border bg-card/50">
       <div className="container-custom py-16 md:py-20">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-12">
           {/* Brand */}
-          <div className="md:col-span-1">
+          <div className="col-span-2 md:col-span-1">
             <Link
               to="/"
-              className="text-xl font-semibold text-foreground tracking-tight"
+              className="text-xl font-bold text-foreground tracking-tight hover:text-foreground/80 transition-colors"
             >
               Mineternoys
             </Link>
-            <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
+            <p className="mt-4 text-sm text-muted-foreground leading-relaxed max-w-xs">
               {t("footer.description")}
             </p>
           </div>
 
           {/* Products */}
           <div>
-            <h4 className="font-medium text-foreground text-sm tracking-wide mb-5">
+            <h4 className="font-semibold text-foreground text-sm tracking-wide mb-5">
               {t("footer.products")}
             </h4>
-            <ul className="space-y-3.5">
-              <li>
-                <Link
-                  to="/products/minemeganbot"
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  MineMeganBot
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/products/minemeganconfig"
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  MineMegan Config
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/pricing"
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  {t("nav.pricing")}
-                </Link>
-              </li>
+            <ul className="space-y-3">
+              {productLinks.map((link) => (
+                <li key={link.name}>
+                  <Link
+                    to={link.href}
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Company */}
           <div>
-            <h4 className="font-medium text-foreground text-sm tracking-wide mb-5">
+            <h4 className="font-semibold text-foreground text-sm tracking-wide mb-5">
               {t("footer.company")}
             </h4>
-            <ul className="space-y-3.5">
-              <li>
-                <Link
-                  to="/about"
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  {t("nav.about")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/contact"
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  {t("nav.contact")}
-                </Link>
-              </li>
-              <li>
-                <a
-                  href="https://discord.gg/mineternoys"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  Discord
-                </a>
-              </li>
+            <ul className="space-y-3">
+              {companyLinks.map((link) => (
+                <li key={link.name}>
+                  {link.external ? (
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                    >
+                      {link.name}
+                    </a>
+                  ) : (
+                    <Link
+                      to={link.href}
+                      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                    >
+                      {link.name}
+                    </Link>
+                  )}
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Legal */}
           <div>
-            <h4 className="font-medium text-foreground text-sm tracking-wide mb-5">
+            <h4 className="font-semibold text-foreground text-sm tracking-wide mb-5">
               {t("footer.legal")}
             </h4>
-            <ul className="space-y-3.5">
-              <li>
-                <Link
-                  to="/privacy"
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  {t("footer.privacy")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/terms"
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  {t("footer.terms")}
-                </Link>
-              </li>
+            <ul className="space-y-3">
+              {legalLinks.map((link) => (
+                <li key={link.name}>
+                  <Link
+                    to={link.href}
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-16 pt-8 border-t border-border/50 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-muted-foreground/70">
+        <div className="mt-16 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-sm text-muted-foreground">
             {t("footer.copyright", { year: currentYear })}
           </p>
-          <p className="text-xs text-muted-foreground/70">{t("footer.poweredBy")}</p>
+          <p className="text-sm text-muted-foreground">
+            {t("footer.poweredBy")}
+          </p>
         </div>
       </div>
     </footer>
   );
-}
+});
+
+Footer.displayName = "Footer";
+
+export { Footer };

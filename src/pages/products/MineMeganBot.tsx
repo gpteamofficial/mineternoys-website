@@ -1,0 +1,194 @@
+import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import {
+  Bot,
+  Zap,
+  Shield,
+  RefreshCw,
+  MessageSquare,
+  Clock,
+  Server,
+  Activity,
+  ArrowRight,
+  Check,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+
+const features = [
+  {
+    icon: Zap,
+    title: "Smart Activity Presence",
+    description: "Intelligent presence simulation that mimics natural user behavior to maintain active status.",
+  },
+  {
+    icon: Shield,
+    title: "Real-time Monitoring",
+    description: "Continuous server health monitoring with instant alerts for any issues or anomalies.",
+  },
+  {
+    icon: RefreshCw,
+    title: "Automatic Reconnection",
+    description: "Self-healing connection logic that automatically restores connections after interruptions.",
+  },
+  {
+    icon: MessageSquare,
+    title: "Discord Integration",
+    description: "Seamless integration with Discord for notifications, commands, and remote management.",
+  },
+  {
+    icon: Clock,
+    title: "24/7 Operation",
+    description: "Designed to run continuously without manual intervention or restarts.",
+  },
+  {
+    icon: Activity,
+    title: "Performance Analytics",
+    description: "Detailed insights into server performance and automation effectiveness.",
+  },
+];
+
+const useCases = [
+  "Keep servers active during low-traffic periods",
+  "Automate routine monitoring tasks",
+  "Receive instant notifications for server issues",
+  "Maintain consistent server presence",
+  "Track server performance over time",
+  "Reduce manual intervention requirements",
+];
+
+export default function MineMeganBot() {
+  const { t } = useTranslation();
+
+  return (
+    <div className="flex flex-col">
+      {/* Hero */}
+      <section className="section-padding bg-secondary/20 relative overflow-hidden">
+        <div className="absolute inset-0 grid-pattern opacity-20" />
+        <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[150px]" />
+        <div className="container-custom relative z-10">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="inline-flex items-center gap-3 mb-6">
+              <div className="w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center">
+                <Bot className="h-8 w-8 text-accent" />
+              </div>
+            </div>
+            <span className="badge-accent mb-4">Automation Product</span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground tracking-tight mt-4">
+              MineMeganBot
+            </h1>
+            <p className="mt-3 text-accent font-medium tracking-wide text-xl">
+              Smart Automation & Monitoring
+            </p>
+            <p className="mt-6 text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+              Intelligent automation with activity presence, real-time monitoring, and reconnect logic 
+              for seamless 24/7 server management.
+            </p>
+            <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Button
+                asChild
+                size="lg"
+                className="bg-accent hover:bg-accent/90 text-accent-foreground h-13 px-8 shadow-lg shadow-accent/20"
+              >
+                <a href="https://discord.gg/mineternoys" target="_blank" rel="noopener noreferrer">
+                  Get Started
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </a>
+              </Button>
+              <Button asChild variant="outline" size="lg" className="h-13 px-8 border-border/60">
+                <Link to="/pricing">View Pricing</Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Features Grid */}
+      <section className="section-padding">
+        <div className="container-custom">
+          <div className="text-center mb-16">
+            <span className="badge-accent mb-4">Features</span>
+            <h2 className="text-3xl md:text-4xl font-semibold text-foreground tracking-tight">
+              Everything you need for automation
+            </h2>
+            <p className="mt-4 text-lg text-muted-foreground max-w-xl mx-auto">
+              Powerful features designed for reliable server automation.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            {features.map(({ icon: Icon, title, description }, index) => (
+              <div
+                key={title}
+                className="feature-card animate-fade-in-up"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <Icon className="h-6 w-6 text-accent mb-4" />
+                <h3 className="text-lg font-semibold text-foreground">{title}</h3>
+                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Use Cases */}
+      <section className="section-padding bg-secondary/20 relative overflow-hidden">
+        <div className="absolute inset-0 grid-pattern opacity-20" />
+        <div className="container-custom relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <div>
+              <span className="badge-accent mb-4">Use Cases</span>
+              <h2 className="text-3xl md:text-4xl font-semibold text-foreground tracking-tight">
+                Built for server administrators
+              </h2>
+              <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
+                MineMeganBot handles the repetitive tasks so you can focus on growing your community.
+              </p>
+            </div>
+            <div className="space-y-4">
+              {useCases.map((useCase, index) => (
+                <div
+                  key={index}
+                  className="flex items-center gap-4 p-4 rounded-xl bg-card border border-border/60 animate-fade-in-up"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  <div className="w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
+                    <Check className="h-4 w-4 text-accent" />
+                  </div>
+                  <span className="text-foreground">{useCase}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="section-padding">
+        <div className="container-custom">
+          <div className="card-premium p-10 md:p-14 text-center max-w-3xl mx-auto">
+            <h3 className="text-2xl md:text-3xl font-semibold text-foreground">
+              Ready to automate your server?
+            </h3>
+            <p className="mt-4 text-muted-foreground max-w-lg mx-auto">
+              Join our Discord community to get started with MineMeganBot today.
+            </p>
+            <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Button
+                asChild
+                className="bg-accent hover:bg-accent/90 text-accent-foreground h-12 px-8"
+              >
+                <a href="https://discord.gg/mineternoys" target="_blank" rel="noopener noreferrer">
+                  Join Discord
+                </a>
+              </Button>
+              <Button asChild variant="outline" className="h-12 px-8 border-border/60">
+                <Link to="/products/minemeganconfig">View MineMegan Config</Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
